@@ -8,7 +8,7 @@
 
 ```bash
 # Install Dependencies
-pip install
+pip install -r requirements.txt
 
 # Run Application on sample Short Story
 python main.py ShortStory.txt
