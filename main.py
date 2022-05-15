@@ -29,6 +29,6 @@ with open(args.File + "_ordered.txt", 'w') as outfile, open(args.File, 'r') as i
     for line in infile:
         line = line.replace('"', '“')
         all_sentences.extend(sent_tokenize(line))
-    for sentence in sorted(all_sentences):
+    for sentence in sorted(all_sentences,key=lambda s: s.strip('“')):
         outfile.write(sentence)
         outfile.write('\n')
