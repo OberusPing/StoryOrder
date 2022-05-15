@@ -26,9 +26,13 @@ args = parser.parse_args()
 # file, in alphabetical order
 with open(args.File + "_ordered.txt", 'w') as outfile, open(args.File, 'r') as infile:
     all_sentences = []
+
     for line in infile:
+        # Replaces standard double quotes with curly quotes, to help NLTK recognize dialogue sentences
         line = line.replace('"', '“')
         all_sentences.extend(sent_tokenize(line))
+        
+    # Ignores quotation marks for the purposes of sorting    
     for sentence in sorted(all_sentences,key=lambda s: s.strip('“')):
         outfile.write(sentence)
         outfile.write('\n')
