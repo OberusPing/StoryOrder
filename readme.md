@@ -6,6 +6,7 @@ Uses NLTK to tokenize sentences, and argparse to construct a cleaner command lin
 
 ## Dependencies
 
+- python
 - pip
 
 ## Getting Started
